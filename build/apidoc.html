@@ -1,0 +1,922 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://trailsjs.io"
+
+    >trails (v2.0.2)</a>
+</h1>
+<h4>Modern Web Application Framework for Node.js</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.trails">module trails</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">trails.</span>core</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">trails.</span>pathfinder</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">trails.</span>trailpack</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.trails.core">module trails.core</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.trails.core.assignGlobals">
+            function <span class="apidocSignatureSpan">trails.core.</span>assignGlobals
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.trails.core.bindApplicationListeners">
+            function <span class="apidocSignatureSpan">trails.core.</span>bindApplicationListeners
+            <span class="apidocSignatureSpan">(app)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.trails.core.bindListeners">
+            function <span class="apidocSignatureSpan">trails.core.</span>bindListeners
+            <span class="apidocSignatureSpan">(app)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.trails.core.bindMethods">
+            function <span class="apidocSignatureSpan">trails.core.</span>bindMethods
+            <span class="apidocSignatureSpan">(app, resource)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.trails.core.createDefaultPaths">
+            function <span class="apidocSignatureSpan">trails.core.</span>createDefaultPaths
+            <span class="apidocSignatureSpan">(app)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.trails.core.getClassMethods">
+            function <span class="apidocSignatureSpan">trails.core.</span>getClassMethods
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.trails.core.getExternalModules">
+            function <span class="apidocSignatureSpan">trails.core.</span>getExternalModules
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.trails.core.unbindListeners">
+            function <span class="apidocSignatureSpan">trails.core.</span>unbindListeners
+            <span class="apidocSignatureSpan">(app)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">trails.core.</span>globalPropertyOptions</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">trails.core.</span>globals</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">trails.core.</span>reservedMethods</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.trails.pathfinder">module trails.pathfinder</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.trails.pathfinder.getEventProducer">
+            function <span class="apidocSignatureSpan">trails.pathfinder.</span>getEventProducer
+            <span class="apidocSignatureSpan">(eventName, stageName, packs, path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.trails.pathfinder.getLifecyclePath">
+            function <span class="apidocSignatureSpan">trails.pathfinder.</span>getLifecyclePath
+            <span class="apidocSignatureSpan">(pack, stageName, packs, path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.trails.pathfinder.getPathErrors">
+            function <span class="apidocSignatureSpan">trails.pathfinder.</span>getPathErrors
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.trails.pathfinder.isComplete">
+            function <span class="apidocSignatureSpan">trails.pathfinder.</span>isComplete
+            <span class="apidocSignatureSpan">(packs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.trails.pathfinder.isLifecycleStageValid">
+            function <span class="apidocSignatureSpan">trails.pathfinder.</span>isLifecycleStageValid
+            <span class="apidocSignatureSpan">(pack, stageName, packs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.trails.pathfinder.isLifecycleValid">
+            function <span class="apidocSignatureSpan">trails.pathfinder.</span>isLifecycleValid
+            <span class="apidocSignatureSpan">(pack, packs)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.trails.trailpack">module trails.trailpack</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.trails.trailpack.bindTrailpackMethodListeners">
+            function <span class="apidocSignatureSpan">trails.trailpack.</span>bindTrailpackMethodListeners
+            <span class="apidocSignatureSpan">(app, packs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.trails.trailpack.bindTrailpackPhaseListeners">
+            function <span class="apidocSignatureSpan">trails.trailpack.</span>bindTrailpackPhaseListeners
+            <span class="apidocSignatureSpan">(app, packs)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.trails" id="apidoc.module.trails">module trails</a></h1>
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.trails.core" id="apidoc.module.trails.core">module trails.core</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.trails.core.assignGlobals" id="apidoc.element.trails.core.assignGlobals">
+        function <span class="apidocSignatureSpan">trails.core.</span>assignGlobals
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">assignGlobals() {
+  _.each(lib.Core.globals, (type, name) =&#x3e; {
+    if (global[name] === type) return
+    if (global[name] &#x26;&#x26; global[name] !== type) {
+      throw new lib.Errors.NamespaceConflictError(name, Object.keys(lib.Core.globals))
+    }
+    const descriptor = Object.assign({ value: type }, lib.Core.globalPropertyOptions)
+    Object.defineProperty(global, name, descriptor)
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+const EventEmitter = require(&#x27;events&#x27;).EventEmitter
+const lib = require(&#x27;./lib&#x27;)
+const i18next = require(&#x27;i18next&#x27;)
+const NOOP = function () { }
+
+// inject Error and Resource types into the global namespace
+lib.Core.<span class="apidocCodeKeywordSpan">assignGlobals</span>()
+
+/**
+ * The Trails Application. Merges the configuration and API resources
+ * loads Trailpacks, initializes logging and event listeners.
+ */
+module.exports = class TrailsApp extends EventEmitter {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.trails.core.bindApplicationListeners" id="apidoc.element.trails.core.bindApplicationListeners">
+        function <span class="apidocSignatureSpan">trails.core.</span>bindApplicationListeners
+        <span class="apidocSignatureSpan">(app)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bindApplicationListeners(app) {
+  app.once(&#x27;trailpack:all:configured&#x27;, () =&#x3e; {
+    if (app.config.main.freezeConfig !== true) {
+      app.log.warn(&#x27;freezeConfig is disabled. Configuration will not be frozen.&#x27;)
+      app.log.warn(&#x27;Please only use this flag for testing/debugging purposes.&#x27;)
+    }
+
+    app.freezeConfig()
+  })
+  app.once(&#x27;trailpack:all:initialized&#x27;, () =&#x3e; {
+    app.log.silly(app.config.motd.silly.initialized)
+    app.log.info(app.config.motd.info.initialized)
+  })
+  app.once(&#x27;trails:ready&#x27;, () =&#x3e; {
+    app.log.info(app.config.motd.info.ready(app))
+    app.log.debug(app.config.motd.debug.ready(app))
+    app.log.silly(app.config.motd.silly.ready(app))
+
+    app.log.info(app.config.motd.hr)
+  })
+  app.once(&#x27;trails:stop&#x27;, () =&#x3e; {
+    app.log.silly(app.config.motd.silly.stop)
+    app.log.info(app.config.motd.info.stop)
+    app.unfreezeConfig()
+  })
+  app.once(&#x27;trails:error:fatal&#x27;, err =&#x3e; app.stop(err))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+bindListeners (app) {
+  if (app.bound) {
+    app.log.warn(&#x27;Someone attempted to bindListeners() twice! Stacktrace below.&#x27;)
+    app.log.warn(console.trace())   // eslint-disable-line no-console
+    return
+  }
+
+  Core.<span class="apidocCodeKeywordSpan">bindApplicationListeners</span>(app)
+  app.bound = true
+},
+
+/**
+ * Bind listeners to trails application events
+ */
+bindApplicationListeners (app) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.trails.core.bindListeners" id="apidoc.element.trails.core.bindListeners">
+        function <span class="apidocSignatureSpan">trails.core.</span>bindListeners
+        <span class="apidocSignatureSpan">(app)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bindListeners(app) {
+  if (app.bound) {
+    app.log.warn(&#x27;Someone attempted to bindListeners() twice! Stacktrace below.&#x27;)
+    app.log.warn(console.trace())   // eslint-disable-line no-console
+    return
+  }
+
+  Core.bindApplicationListeners(app)
+  app.bound = true
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  /**
+   * Start the App. Load all Trailpacks.
+   *
+   * @return Promise
+   */
+  start () {
+lib.Core.<span class="apidocCodeKeywordSpan">bindListeners</span>(this)
+lib.Trailpack.bindTrailpackPhaseListeners(this, this.loadedPacks)
+lib.Trailpack.bindTrailpackMethodListeners(this, this.loadedPacks)
+
+// initialize i18n
+i18next.init(this.config.i18n, (err, t) =&#x3e; {
+  if (err) {
+    throw new Error(`Problem loading i18n: ${err}`)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.trails.core.bindMethods" id="apidoc.element.trails.core.bindMethods">
+        function <span class="apidocSignatureSpan">trails.core.</span>bindMethods
+        <span class="apidocSignatureSpan">(app, resource)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bindMethods(app, resource) {
+  return _.mapValues(app.api[resource], (Resource, resourceName) =&#x3e; {
+    if (_.isPlainObject(Resource)) {
+      throw new Error(`${resourceName} should be a class. It is a regular object`)
+    }
+
+    const obj = new Resource(app)
+
+    obj.methods = Core.getClassMethods(obj)
+    _.forEach(obj.methods, method =&#x3e; {
+      obj[method] = obj[method].bind(obj)
+    })
+    return obj
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    catch (e) {
+      throw new TrailpackError(Pack, e, &#x27;constructor&#x27;)
+    }
+  })
+  this.loadedPacks = Object.keys(this.packs).map(name =&#x3e; this.packs[name])
+
+  // bind resource methods
+  Object.assign(this.models, lib.Core.<span class="apidocCodeKeywordSpan">bindMethods</span>(this, &#x27;models&#x27;))
+  Object.assign(this.services, lib.Core.bindMethods(this, &#x27;services&#x27;))
+  Object.assign(this.controllers, lib.Core.bindMethods(this, &#x27;controllers&#x27;))
+  Object.assign(this.policies, lib.Core.bindMethods(this, &#x27;policies&#x27;))
+}
+
+/**
+ * Start the App. Load all Trailpacks.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.trails.core.createDefaultPaths" id="apidoc.element.trails.core.createDefaultPaths">
+        function <span class="apidocSignatureSpan">trails.core.</span>createDefaultPaths
+        <span class="apidocSignatureSpan">(app)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createDefaultPaths(app) {
+  const paths = app.config.main.paths
+
+  return Promise.all(_.map(paths, (dir, pathName) =&#x3e; {
+    return new Promise((resolve, reject) =&#x3e; {
+      fs.stat(dir, (err, stats) =&#x3e; {
+        resolve({ err, stats })
+      })
+    })
+    .then(result =&#x3e; {
+      const stats = result.stats
+
+      if (stats &#x26;&#x26; !stats.isDirectory()) {
+        app.log.error(&#x27;The configured path &#x22;&#x27;, pathName, &#x27;&#x22; is not a directory.&#x27;)
+        app.log.error(&#x27;config.main.paths should only contain paths to directories&#x27;)
+        return Promise.reject()
+      }
+
+      return result
+    })
+    .then(stat =&#x3e; {
+      if (stat.err &#x26;&#x26; /no such file or directory/.test(stat.err.message)) {
+        app.log.debug(&#x27;Trails is creating the path (&#x27;, pathName, &#x27;) at&#x27;, dir)
+      }
+      mkdirp.sync(dir)
+    })
+  }))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+/**
+ * Create any configured paths which may not already exist.
+ */
+createPaths () {
+  if (this.config.main.createPaths === false) {
+    this.log.warn(&#x27;createPaths is disabled. Configured paths will not be created&#x27;)
+  }
+  return lib.Core.<span class="apidocCodeKeywordSpan">createDefaultPaths</span>(this)
+}
+
+/**
+ * Expose the logger on the app object. The logger can be configured by
+ * setting the &#x22;config.log.logger&#x22; config property.
+ */
+get log () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.trails.core.getClassMethods" id="apidoc.element.trails.core.getClassMethods">
+        function <span class="apidocSignatureSpan">trails.core.</span>getClassMethods
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getClassMethods(obj) {
+  const props = [ ]
+  const objectRoot = new Object()
+
+  while (!obj.isPrototypeOf(objectRoot)) {
+    Object.getOwnPropertyNames(obj).forEach(prop =&#x3e; {
+      if (props.indexOf(prop) === -1 &#x26;&#x26;
+          !_.includes(Core.reservedMethods, prop) &#x26;&#x26;
+          _.isFunction(obj[prop])) {
+
+        props.push(prop)
+      }
+    })
+    obj = Object.getPrototypeOf(obj)
+  }
+
+  return props
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return _.mapValues(app.api[resource], (Resource, resourceName) =&#x3e; {
+    if (_.isPlainObject(Resource)) {
+      throw new Error(`${resourceName} should be a class. It is a regular object`)
+    }
+
+    const obj = new Resource(app)
+
+    obj.methods = Core.<span class="apidocCodeKeywordSpan">getClassMethods</span>(obj)
+    _.forEach(obj.methods, method =&#x3e; {
+      obj[method] = obj[method].bind(obj)
+    })
+    return obj
+  })
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.trails.core.getExternalModules" id="apidoc.element.trails.core.getExternalModules">
+        function <span class="apidocSignatureSpan">trails.core.</span>getExternalModules
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getExternalModules() {
+  const rootPath = path.resolve(path.dirname(require.main.filename))
+  const modulePath = path.join(rootPath, &#x27;node_modules&#x27;)
+  const requiredModules = Object.keys(require.cache).filter(mod =&#x3e; {
+    return mod.indexOf(modulePath) &#x3e;= 0
+  })
+  return requiredModules
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+loadedPacks: {
+  enumerable: false,
+  writable: true,
+  value: [ ]
+},
+loadedModules: {
+  enumerable: false,
+  value: lib.Core.<span class="apidocCodeKeywordSpan">getExternalModules</span>(this.pkg)
+},
+bound: {
+  enumerable: false,
+  writable: true,
+  value: false
+},
+started: {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.trails.core.unbindListeners" id="apidoc.element.trails.core.unbindListeners">
+        function <span class="apidocSignatureSpan">trails.core.</span>unbindListeners
+        <span class="apidocSignatureSpan">(app)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unbindListeners(app) {
+  app.removeAllListeners()
+  app.bound = false
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+if (!this.started) {
+  this.log.error(&#x27;The application did not boot successfully.&#x27;)
+  this.log.error(&#x27;Try increasing the loglevel to &#x22;debug&#x22; to learn more&#x27;)
+}
+
+this.emit(&#x27;trails:stop&#x27;)
+lib.Core.<span class="apidocCodeKeywordSpan">unbindListeners</span>(this)
+
+return Promise.all(
+  this.loadedPacks.map(pack =&#x3e; {
+    this.log.debug(&#x27;Unloading trailpack&#x27;, pack.name, &#x27;...&#x27;)
+    return pack.unload()
+  }))
+  .then(() =&#x3e; {
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.trails.pathfinder" id="apidoc.module.trails.pathfinder">module trails.pathfinder</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.trails.pathfinder.getEventProducer" id="apidoc.element.trails.pathfinder.getEventProducer">
+        function <span class="apidocSignatureSpan">trails.pathfinder.</span>getEventProducer
+        <span class="apidocSignatureSpan">(eventName, stageName, packs, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getEventProducer(eventName, stageName, packs, path) {
+  const producers = packs
+    .filter(pack =&#x3e; {
+      const stage = pack.config.lifecycle[stageName]
+      return path.indexOf(pack) === -1 &#x26;&#x26; stage.emit.indexOf(eventName) &#x3e;= 0
+    })
+
+  if (producers.length &#x3e; 1) {
+    return new Error(`More than one trailpack produces the event ${eventName}`)
+  }
+  if (producers.length === 0) {
+    return new Errors.GraphCompletenessError(path[path.length - 1], stageName, eventName)
+  }
+
+  return producers[0]
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.trails.pathfinder.getLifecyclePath" id="apidoc.element.trails.pathfinder.getLifecyclePath">
+        function <span class="apidocSignatureSpan">trails.pathfinder.</span>getLifecyclePath
+        <span class="apidocSignatureSpan">(pack, stageName, packs, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getLifecyclePath(pack, stageName, packs, path) {
+  const stage = pack.config.lifecycle[stageName] || { }
+
+  if (!path) {
+    return Pathfinder.getLifecyclePath (pack, stageName, packs, [ pack ])
+  }
+
+  // terminate traversal. if current pack waits for no events, then it
+  // necessarily reaches the sink, and indicates a complete path.
+  if (!stage.listen || stage.listen.length === 0) {
+    return true
+  }
+
+  // find all packs that produce the event(s) that the current pack requires
+  const producers = stage.listen
+    .map(eventName =&#x3e; {
+      return Pathfinder.getEventProducer (eventName, stageName, packs, path)
+    })
+    .filter(producer =&#x3e; !!producer)
+
+
+  // return first error encountered in this path. terminate traversal.
+  // one or more of the required events are not available.
+  const error = producers.find(producer =&#x3e; producer instanceof Errors.GraphCompletenessError)
+  if (error) {
+    return error
+  }
+
+  // all producers must themselves have complete paths.
+  return producers.reduce((level, producer) =&#x3e; {
+    const subpath = path.concat(producer)
+    level[producer.name] = Pathfinder.getLifecyclePath(producer, stageName, packs, subpath)
+    return level
+  }, { })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Return true if a particular stage is valid for the given pack; false
+ * otherwise
+ */
+isLifecycleStageValid (pack, stageName, packs) {
+  if (!stageName || lifecycleStages.indexOf(stageName) === -1) {
+    throw new TypeError(`isLifecycleStageValid: stageName must be one of ${lifecycleStages}`)
+  }
+  const path = Pathfinder.<span class="apidocCodeKeywordSpan">getLifecyclePath</span>(pack, stageName, packs)
+  const terminals = Pathfinder.getPathErrors(path)
+  return !terminals.some(t =&#x3e; t instanceof Error)
+},
+
+/**
+ * Traverse the lifecycle path and return the terminal values for each of its
+ * branches (lifecycle events)
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.trails.pathfinder.getPathErrors" id="apidoc.element.trails.pathfinder.getPathErrors">
+        function <span class="apidocSignatureSpan">trails.pathfinder.</span>getPathErrors
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getPathErrors(path) {
+  if (typeof path === &#x27;boolean&#x27;) {
+    return [ ]
+  }
+  if (path instanceof Error) {
+    return [ path ]
+  }
+  return Object.keys(path)
+    .map(key =&#x3e; Pathfinder.getPathErrors(path[key]))
+    .reduce((terminals, t) =&#x3e; terminals.concat(t), [ ])
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * otherwise
+ */
+isLifecycleStageValid (pack, stageName, packs) {
+  if (!stageName || lifecycleStages.indexOf(stageName) === -1) {
+    throw new TypeError(`isLifecycleStageValid: stageName must be one of ${lifecycleStages}`)
+  }
+  const path = Pathfinder.getLifecyclePath(pack, stageName, packs)
+  const terminals = Pathfinder.<span class="apidocCodeKeywordSpan">getPathErrors</span>(path)
+  return !terminals.some(t =&#x3e; t instanceof Error)
+},
+
+/**
+ * Traverse the lifecycle path and return the terminal values for each of its
+ * branches (lifecycle events)
+ */
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.trails.pathfinder.isComplete" id="apidoc.element.trails.pathfinder.isComplete">
+        function <span class="apidocSignatureSpan">trails.pathfinder.</span>isComplete
+        <span class="apidocSignatureSpan">(packs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isComplete(packs) {
+  return packs.every(pack =&#x3e; {
+    return Pathfinder.isLifecycleValid (pack, packs)
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.trails.pathfinder.isLifecycleStageValid" id="apidoc.element.trails.pathfinder.isLifecycleStageValid">
+        function <span class="apidocSignatureSpan">trails.pathfinder.</span>isLifecycleStageValid
+        <span class="apidocSignatureSpan">(pack, stageName, packs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isLifecycleStageValid(pack, stageName, packs) {
+  if (!stageName || lifecycleStages.indexOf(stageName) === -1) {
+    throw new TypeError(`isLifecycleStageValid: stageName must be one of ${lifecycleStages}`)
+  }
+  const path = Pathfinder.getLifecyclePath(pack, stageName, packs)
+  const terminals = Pathfinder.getPathErrors(path)
+  return !terminals.some(t =&#x3e; t instanceof Error)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.trails.pathfinder.isLifecycleValid" id="apidoc.element.trails.pathfinder.isLifecycleValid">
+        function <span class="apidocSignatureSpan">trails.pathfinder.</span>isLifecycleValid
+        <span class="apidocSignatureSpan">(pack, packs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isLifecycleValid(pack, packs) {
+  return lifecycleStages.every(stageName =&#x3e; {
+    return Pathfinder.isLifecycleStageValid (pack, stageName, packs)
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.trails.trailpack" id="apidoc.module.trails.trailpack">module trails.trailpack</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.trails.trailpack.bindTrailpackMethodListeners" id="apidoc.element.trails.trailpack.bindTrailpackMethodListeners">
+        function <span class="apidocSignatureSpan">trails.trailpack.</span>bindTrailpackMethodListeners
+        <span class="apidocSignatureSpan">(app, packs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bindTrailpackMethodListeners(app, packs) {
+  packs.map(pack =&#x3e; {
+    const lifecycle = pack.config.lifecycle
+
+    app.after(lifecycle.initialize.listen.concat(&#x27;trailpack:all:configured&#x27;))
+      .then(() =&#x3e; app.log.debug(&#x27;trailpack: initializing&#x27;, pack.name))
+      .then(() =&#x3e; pack.initialize())
+      .catch(err =&#x3e; app.stop(err))
+      .then(() =&#x3e; app.emit(`trailpack:${pack.name}:initialized`))
+
+    app.after(lifecycle.configure.listen.concat(&#x27;trailpack:all:validated&#x27;))
+      .then(() =&#x3e; app.log.debug(&#x27;trailpack: configuring&#x27;, pack.name))
+      .then(() =&#x3e; pack.configure())
+      .catch(err =&#x3e; app.stop(err))
+      .then(() =&#x3e; app.emit(`trailpack:${pack.name}:configured`))
+
+    app.after(&#x27;trails:start&#x27;)
+      .then(() =&#x3e; app.log.debug(&#x27;trailpack: validating&#x27;, pack.name))
+      .then(() =&#x3e; pack.validate())
+      .catch(err =&#x3e; app.stop(err))
+      .then(() =&#x3e; app.emit(`trailpack:${pack.name}:validated`))
+  })
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+   * Start the App. Load all Trailpacks.
+   *
+   * @return Promise
+   */
+  start () {
+lib.Core.bindListeners(this)
+lib.Trailpack.bindTrailpackPhaseListeners(this, this.loadedPacks)
+lib.Trailpack.<span class="apidocCodeKeywordSpan">bindTrailpackMethodListeners</span>(this, this.loadedPacks)
+
+// initialize i18n
+i18next.init(this.config.i18n, (err, t) =&#x3e; {
+  if (err) {
+    throw new Error(`Problem loading i18n: ${err}`)
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.trails.trailpack.bindTrailpackPhaseListeners" id="apidoc.element.trails.trailpack.bindTrailpackPhaseListeners">
+        function <span class="apidocSignatureSpan">trails.trailpack.</span>bindTrailpackPhaseListeners
+        <span class="apidocSignatureSpan">(app, packs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bindTrailpackPhaseListeners(app, packs) {
+  const validatedEvents = packs.map(pack =&#x3e; `trailpack:${pack.name}:validated`)
+  const configuredEvents = packs.map(pack =&#x3e; `trailpack:${pack.name}:configured`)
+  const initializedEvents = packs.map(pack =&#x3e; `trailpack:${pack.name}:initialized`)
+
+  app.after(configuredEvents)
+    .then(() =&#x3e; app.createPaths())
+    .then(() =&#x3e; app.emit(&#x27;trailpack:all:configured&#x27;))
+    .catch(err =&#x3e; app.stop(err))
+
+  app.after(validatedEvents)
+    .then(() =&#x3e; app.emit(&#x27;trailpack:all:validated&#x27;))
+    .catch(err =&#x3e; app.stop(err))
+
+  app.after(initializedEvents)
+    .then(() =&#x3e; {
+      app.emit(&#x27;trailpack:all:initialized&#x27;)
+      app.emit(&#x27;trails:ready&#x27;)
+    })
+    .catch(err =&#x3e; app.stop(err))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  /**
+   * Start the App. Load all Trailpacks.
+   *
+   * @return Promise
+   */
+  start () {
+lib.Core.bindListeners(this)
+lib.Trailpack.<span class="apidocCodeKeywordSpan">bindTrailpackPhaseListeners</span>(this, this.loadedPacks)
+lib.Trailpack.bindTrailpackMethodListeners(this, this.loadedPacks)
+
+// initialize i18n
+i18next.init(this.config.i18n, (err, t) =&#x3e; {
+  if (err) {
+    throw new Error(`Problem loading i18n: ${err}`)
+  }
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
