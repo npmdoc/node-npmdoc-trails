@@ -63,6 +63,15 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.trails.trails">
+            function <span class="apidocSignatureSpan"></span>trails
+            <span class="apidocSignatureSpan">(api/ folder)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">trails.</span>core</span>
 
         </li>
@@ -259,6 +268,192 @@
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.trails" id="apidoc.module.trails">module trails</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.trails.trails" id="apidoc.element.trails.trails">
+        function <span class="apidocSignatureSpan"></span>trails
+        <span class="apidocSignatureSpan">(api/ folder)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">class TrailsApp extends EventEmitter {
+
+<span class="apidocCodeCommentSpan">  /**
+   * @param pkg The application package.json
+   * @param app.api The application api (api/ folder)
+   * @param app.config The application configuration (config/ folder)
+   *
+   * Initialize the Trails Application and its EventEmitter parentclass. Set
+   * some necessary default configuration.
+   */
+</span>  constructor (app) {
+    super()
+
+    if (!app) {
+      throw new RangeError(&#x27;No app definition provided to Trails constructor&#x27;)
+    }
+    if (!app.pkg) {
+      throw new lib.Errors.PackageNotDefinedError()
+    }
+    if (!app.api) {
+      throw new lib.Errors.ApiNotDefinedError()
+    }
+
+    if (!process.env.NODE_ENV) {
+      process.env.NODE_ENV = &#x27;development&#x27;
+    }
+
+    const processEnv = Object.freeze(JSON.parse(JSON.stringify(process.env)))
+
+    Object.defineProperties(this, {
+      env: {
+        enumerable: false,
+        value: processEnv
+      },
+      pkg: {
+        enumerable: false,
+        value: app.pkg
+      },
+      versions: {
+        enumerable: false,
+        writable: false,
+        configurable: false,
+        value: process.versions
+      },
+      config: {
+        value: new lib.Configuration(app.config, processEnv),
+        configurable: true,
+        writable: false
+      },
+      api: {
+        value: app.api,
+        writable: true,
+        configurable: true
+      },
+      _trails: {
+        enumerable: false,
+        value: require(&#x27;./package&#x27;)
+      },
+      packs: {
+        value: { }
+      },
+      loadedPacks: {
+        enumerable: false,
+        writable: true,
+        value: [ ]
+      },
+      loadedModules: {
+        enumerable: false,
+        value: lib.Core.getExternalModules(this.pkg)
+      },
+      bound: {
+        enumerable: false,
+        writable: true,
+        value: false
+      },
+      started: {
+        enumerable: false,
+        writable: true,
+        value: false
+      },
+      stopped: {
+        enumerable: false,
+        writable: true,
+        value: false
+      },
+      timers: {
+        enumerable: false,
+        writable: true,
+        value: { }
+      },
+      models: {
+        enumerable: true,
+        writable: false,
+        value: { }
+      },
+      services: {
+        enumerable: true,
+        writable: false,
+        value: { }
+      },
+      controllers: {
+        enumerable: true,
+        writable: false,
+        value: { }
+      },
+      policies: {
+        enumerable: true,
+        writable: false,
+        value: { }
+      },
+      translate: {
+        enumerable: false,
+        writable: true
+      }
+    })
+
+    this.setMaxListeners(this.config.main.maxListeners)
+
+    // instantiate trailpacks
+    this.config.main.packs.forEach(Pack =&#x3e; {
+      try {
+        new Pack(this)
+      }
+      catch (e) {
+        throw new TrailpackError(Pack, e, &#x27;constructor&#x27;)
+      }
+    })
+    this.loadedPacks = Object.keys(this.packs).map(name =&#x3e; this.packs[name])
+
+    // bind resource methods
+    Object.assign(this.models, lib.Core.bindMethods(this, &#x27;models&#x27;))
+    Object.assign(this.services, lib.Core.bindMethods(this, &#x27;services&#x27;))
+    Object.assign(this.controllers, lib.Core.bindMethods(this, &#x27;controllers&#x27;))
+    Object.assign(this.policies, lib.Core.bindMethods(this, &#x27;policies&#x27;))
+  }
+
+  /**
+   * Start the App. Load all Trailpacks.
+   *
+   * @return Promise
+   */
+  start () {
+    lib.Core.bindListeners(this)
+    lib.Trailpack.bindTrailpackPhaseListeners(this, this.loadedPacks)
+    lib.Trailpack.bindTrailpackMethodListeners(this, this.loadedPacks)
+
+    // initialize i18n
+    i18next.init(this.config.i18n, (err, t) =&#x3e; {
+      if (err) {
+        throw new Error(`Problem loading i18n: ${err}`)
+      }
+
+      this.translate = t
+      this.emit(&#x27;trails:start&#x27;)
+    })
+
+    return this.after(&#x27;trails:ready&#x27;)
+      .then(() =&#x3e; {
+        this.started = true
+        return this
+      })
+  }
+
+  /**
+   * Shutdown. Unbind listeners, unload trailpacks.
+   * @return Promise
+   */
+  stop (err) {
+    this.stopped = true
+    if (err) {
+      this.log.error(&#x27;\n&#x27;, err.stack || &#x27;&#x27;)
+    }
+    if (!this.started) {
+      this.log.error(&#x27;The application did no ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
 
