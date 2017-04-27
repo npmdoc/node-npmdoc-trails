@@ -836,7 +836,24 @@ return Promise.all(
 
   return producers[0]
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+          }
+        }
+      }
+    }
+  })
+]
+it('should return the trailpack that produces a particular event', () =&gt; {
+  const producer = lib.Pathfinder.<span class="apidocCodeKeywordSpan">getEventProducer</span>('pack1:configured', '
+;configure', packs, [ ])
+  assert.equal(producer, packs[0])
+})
+it('should return the trailpack that produces a particular event', () =&gt; {
+  const producer = lib.Pathfinder.getEventProducer('pack2:configured', 'configure', packs, [ ])
+  assert.equal(producer, packs[1])
+})
+it('should return Error if there is no trailpack that produces the given event', () =&gt; {
+...</pre></li>
     </ul>
 
 
@@ -955,7 +972,23 @@ isLifecycleStageValid (pack, stageName, packs) {
     return Pathfinder.isLifecycleValid (pack, packs)
   })
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    assert(!valid)
+  })
+})
+
+describe('#isComplete', () =&gt; {
+  it('should return true for a complete trailpack graph (n=1)', () =&gt; {
+    const path = [ packs[0] ]
+    const valid = lib.Pathfinder.<span class="apidocCodeKeywordSpan">isComplete</span>(path)
+    assert(valid)
+  })
+  it('should return true for a complete trailpack graph (n=4)', () =&gt; {
+    const path = [ packs[0], packs[1], packs[2], packs[3] ]
+    const valid = lib.Pathfinder.isComplete(path)
+    assert(valid)
+  })
+...</pre></li>
     </ul>
 
 
@@ -975,7 +1008,24 @@ isLifecycleStageValid (pack, stageName, packs) {
   const terminals = Pathfinder.getPathErrors(path)
   return !terminals.some(t =&gt; t instanceof Error)
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    assert.equal(path.pack0, true)
+    assert(path.pack5 instanceof Error)
+  })
+})
+
+describe('#isLifecycleStageValid', () =&gt; {
+  it('should return true for a valid trailpack path (pack=sink)', () =&gt; {
+    const valid = lib.Pathfinder.<span class="apidocCodeKeywordSpan">isLifecycleStageValid</span>(packs[0], 'configure'
+;, packs)
+    assert(valid)
+  })
+  it('should return true for a valid trailpack path (distance&gt;1)', () =&gt; {
+    const valid = lib.Pathfinder.isLifecycleStageValid(packs[2], 'configure', packs)
+    assert(valid)
+  })
+  it('should return false for a invalid trailpack path (distance&gt;1)', () =&gt; {
+...</pre></li>
     </ul>
 
 
@@ -992,7 +1042,23 @@ isLifecycleStageValid (pack, stageName, packs) {
     return Pathfinder.isLifecycleStageValid (pack, stageName, packs)
   })
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    const valid = lib.Pathfinder.isLifecycleStageValid(packs[4], 'configure', packs)
+    assert(!valid)
+  })
+})
+
+describe('#isLifecycleValid', () =&gt; {
+  it('should return true for a valid trailpack path (distance=1)', () =&gt; {
+    const valid = lib.Pathfinder.<span class="apidocCodeKeywordSpan">isLifecycleValid</span>(packs[0], packs)
+    assert(valid)
+  })
+  it('should return true for a valid trailpack path (distance=2)', () =&gt; {
+    const valid = lib.Pathfinder.isLifecycleValid(packs[2], packs)
+    assert(valid)
+  })
+  it('should return true for a valid trailpack path (distance=2)', () =&gt; {
+...</pre></li>
     </ul>
 
 
