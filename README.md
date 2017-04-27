@@ -1,6 +1,6 @@
 # npmdoc-trails
 
-#### api documentation for  [trails (v2.0.2)](http://trailsjs.io)  [![npm package](https://img.shields.io/npm/v/npmdoc-trails.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-trails) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-trails.svg)](https://travis-ci.org/npmdoc/node-npmdoc-trails)
+#### basic api documentation for  [trails (v2.0.2)](http://trailsjs.io)  [![npm package](https://img.shields.io/npm/v/npmdoc-trails.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-trails) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-trails.svg)](https://travis-ci.org/npmdoc/node-npmdoc-trails)
 
 #### Modern Web Application Framework for Node.js
 
@@ -132,7 +132,8 @@
         "test": "eslint --ignore-path .gitignore . && istanbul cover node_modules/mocha/bin/_mocha",
         "test-performance": "eslint . && mocha test-performance"
     },
-    "version": "2.0.2"
+    "version": "2.0.2",
+    "bin": {}
 }
 ```
 
